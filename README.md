@@ -1,4 +1,4 @@
-java-news
+Java News
 =========
 
-java version of hacker news
+java implement of Hacker News

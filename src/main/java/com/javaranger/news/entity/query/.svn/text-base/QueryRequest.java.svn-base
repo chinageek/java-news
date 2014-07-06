@@ -1,0 +1,21 @@
+package com.javaranger.news.entity.query;
+
+import com.javaranger.news.entity.Request;
+
+public class QueryRequest extends Request{
+
+	private String type;
+	private String q;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getQ() {
+		return q;
+	}
+	public void setQ(String q) {
+		this.q = q;
+	}
+}

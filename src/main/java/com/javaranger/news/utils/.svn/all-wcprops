@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/10/trunk/java-news/src/main/java/com/javaranger/news/utils
+END
+RequestFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/12/trunk/java-news/src/main/java/com/javaranger/news/utils/RequestFilter.java
+END
+ThreadContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/12/trunk/java-news/src/main/java/com/javaranger/news/utils/ThreadContext.java
+END
+Exceptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10/trunk/java-news/src/main/java/com/javaranger/news/utils/Exceptions.java
+END
+JaxbMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/10/trunk/java-news/src/main/java/com/javaranger/news/utils/JaxbMapper.java
+END

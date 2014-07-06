@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.javaranger.news.dao.MessageMapper">
+	<insert id="saveMessage" parameterType="Message">
+		insert into message (type,code,location,birthday,gender,ip,phonenum,createtime)values(#{type},#{code},#{location},#{birthday},#{gender},#{ip},#{phonenum},#{createTime})
+	</insert>
+	
+	<select id="getIdMessage" parameterType="java.util.Map" resultType="Message">
+		<![CDATA[
+			SELECT * FROM message WHERE code = #{code}
+		]]>
+	</select>
+	<select id="getIpMessage" parameterType="java.util.Map" resultType="Message">
+		<![CDATA[
+			SELECT * FROM message WHERE ip = #{ip} 
+		]]>
+	</select>
+		<select id="getMobileMessage" parameterType="java.util.Map" resultType="Message">
+		<![CDATA[
+			SELECT * FROM message WHERE phonenum = #{phonenum}
+		]]>
+	</select>
+
+	<resultMap type="Message" id="batorgenerated_BaseResultMap">
+		<id property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="code" column="code" />
+		<result property="location" column="location" />
+		<result property="birthday" column="birthday" />
+		<result property="gender" column="gender" />
+		<result property="ip" column="ip" />
+		<result property="phonenum" column="phonenum" />
+	</resultMap>
+	
+<!-- 		<resultMap type="IP" id="batorgenerated_BaseResultMap">
+		<id property="id" column="id" />
+		<result property="country" column="country" />
+		<result property="country_id" column="country_id" />
+		<result property="area" column="area" />
+		<result property="area_id" column="area_id" />
+		<result property="region" column="region" />
+		<result property="region_id" column="region_id" />
+		<result property="city" column="city" />
+		<result property="city_id" column="city_id" />
+		<result property="county" column="county" />
+		<result property="county_id" column="county_id" />
+		<result property="isp" column="isp" />
+		<result property="isp_id" column="isp_id" />
+		<result property="ip" column="ip" />
+	</resultMap> -->
+	
+	<insert id="saveIp" parameterType="IP">
+		insert into ip (country,country_id,area,area_id,region,region_id,city,city_id,county,county_id,isp,isp_id,ip) 
+		values(#{country},#{country_id},#{area},#{area_id},#{region},#{region_id},#{city},#{city_id},#{county},#{county_id},#{isp},#{isp_id},#{ip})
+	</insert>
+</mapper>

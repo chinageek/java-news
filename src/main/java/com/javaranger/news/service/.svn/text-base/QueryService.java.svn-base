@@ -1,0 +1,118 @@
+package com.javaranger.news.service;
+
+import java.util.regex.Pattern;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.StatusLine;
+import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
+import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.javaranger.http.HttpClientUtils;
+import com.javaranger.news.dao.MessageMapper;
+import com.javaranger.news.entity.query.QueryRequest;
+import com.javaranger.news.entity.query.QueryResult;
+import com.javaranger.news.entity.query.QueryResult.Product;
+import com.javaranger.news.pojo.Message;
+import com.javaranger.news.utils.JaxbMapper;
+import com.javaranger.news.utils.RequestFilter;
+import com.sina.sae.fetchurl.SaeFetchurl;
+
+
+@Component
+public class QueryService {
+	private static final Logger log = Logger.getLogger(QueryService.class);
+	
+	static Pattern patternLocation = Pattern.compile("<location>(.+{1,})</location>");  
+	public static final String IP = "ip";
+	public static final String MOBILE = "mobile";
+	public static final String ID = "id";
+	@Autowired
+	MessageMapper messageMapper;
+	public QueryResult query(QueryRequest request) {
+		String result = "<?xml version=\"1.0\" encoding=\"gbk\"?><smartresult><product type=\"ip\"><ip>110.110.110.110</ip><location>黑龙江省哈尔滨市 铁通</location></product></smartresult>";  
+	    try {  
+	    	String url = "http://www.youdao.com/smartresult-xml/search.s?type="+ request.getType() +"&q=" + request.getQ();
+	    	
+	    	log.info("url:"+url);
+	    	SaeFetchurl fetchUrl = new SaeFetchurl();
+	    	 //返回HTTP状态码
+	        int stat=fetchUrl.getHttpCode();
+	    	if (stat == 200) {
+	    		result = fetchUrl.fetch(url);
+	    		log.info("result=============:"+result);
+	    	}
+	    	
+//	    	HttpClientUtils client = new HttpClientUtils();
+//	    	HttpResponse response= client.post(url, "");
+//	    	StatusLine status = response.getStatusLine();
+//	    	HttpEntity entity = response.getEntity();
+//	    	log.info("status=============:"+status.getStatusCode());
+//	    	result = EntityUtils.toString(entity);
+	    	
+	    } catch (Throwable e) {  
+	        log.error(e.getMessage()); 
+	    }
+	    
+	    JaxbMapper jaxbMapper = new JaxbMapper(QueryResult.class);
+	    QueryResult queryResult = jaxbMapper.fromXml(result);
+	    
+	    if (null != queryResult.getProduct()) {
+	    	Product product = queryResult.getProduct();
+	    	Message message = new Message();
+	    	message.setType(request.getType());
+	    	message.setBirthday(product.getBirthday());
+	    	message.setGender(product.getGender());
+//	    	if (StringUtils.isBlank(product.getIp())) {
+//				product.setIp(RequestFilter.getIp());
+//			}
+	    	message.setIp(product.getIp());
+	    	message.setLocation(product.getLocation());
+	    	message.setPhonenum(product.getPhonenum());
+	    	message.setCreateTime(new DateTime().toDate());
+	    	message.setCode(product.getCode());
+	    	if (messageMapper.getMessage(request.getType(), request.getQ())==null) {
+	    		messageMapper.saveMessage(message);
+			}
+	    	queryResult.setRet(true);
+	    	queryResult.setErrCode("0");
+	    	queryResult.setErrMsg("查询成功！");
+		}else {
+			queryResult = new QueryResult();
+			queryResult.setErrCode("1");
+			queryResult.setErrMsg("没有符合条件的结果！");
+		}
+		return queryResult;
+	}
+//	<?xml version="1.0" encoding="gbk"?>
+//	<smartresult>
+//	    <product type="identitycard">
+//	        <code>370881198605010335</code>
+//	        <location>山东省济宁市曲阜市</location>
+//	        <birthday>19860501</birthday>
+//	        <gender>m</gender>
+//	    </product>
+//	</smartresult>
+//
+//
+//	<?xml version="1.0" encoding="gbk"?>
+//	<smartresult>
+//	    <product type="ip">
+//	        <ip>110.110.110.110</ip>
+//	        <location>黑龙江省哈尔滨市 铁通</location>
+//	    </product>
+//	</smartresult>
+//
+//
+//	<?xml version="1.0" encoding="gbk"?>
+//	<smartresult>
+//	    <product type="mobile">
+//	        <phonenum>15210342003</phonenum>
+//	        <location>北京 </location>
+//	    </product>
+//	</smartresult>
+}

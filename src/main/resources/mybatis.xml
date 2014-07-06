@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>
+	<typeAliases>
+		<typeAlias alias="User" type="com.javaranger.news.pojo.User"/>
+		<typeAlias alias="Message" type="com.javaranger.news.pojo.Message"/>
+		<typeAlias alias="IP" type="com.javaranger.news.entity.IPData"/>
+	</typeAliases>
+	<mappers>
+  		<mapper resource="UserMapper.xml"/>
+  		<mapper resource="MessageMapper.xml"/>
+	</mappers>
+</configuration>

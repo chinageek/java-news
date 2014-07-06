@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/trunk/java-news/src/main/resources
+END
+MessageMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/12/trunk/java-news/src/main/resources/MessageMapper.xml
+END
+UserMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/5/trunk/java-news/src/main/resources/UserMapper.xml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/10/trunk/java-news/src/main/resources/log4j.properties
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/12/trunk/java-news/src/main/resources/applicationContext.xml
+END
+mybatis.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/10/trunk/java-news/src/main/resources/mybatis.xml
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/4/trunk/java-news/src/main/java/com/javaranger/news/dao
+END
+MessageMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/11/trunk/java-news/src/main/java/com/javaranger/news/dao/MessageMapper.java
+END
+SuperDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/4/trunk/java-news/src/main/java/com/javaranger/news/dao/SuperDao.java
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/4/trunk/java-news/src/main/java/com/javaranger/news/dao/UserDao.java
+END
