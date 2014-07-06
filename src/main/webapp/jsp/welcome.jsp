@@ -8,10 +8,10 @@
     <meta http-equiv="cache-control" content="no-cache">
     <title>首页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
   	<script type="text/javascript" src="/static/js/jquery.min.js"></script>
-  	<script type="text/javascript" src="/static/js/demo.js"></script>  
+  	<script type="text/javascript" src="/static/js/demo.js"></script>
   </head>
 
 <body>

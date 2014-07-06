@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>addPage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">    
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
   </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -24,7 +24,8 @@
   woman<input type="radio" name="sex" value="woman"><br>
   <button type="submit" class="btn">add</button>
 </form>
+</div>
 </body>
 <div align="left"><a href="/">go back</a></div>
-    </div>
+
 </html>

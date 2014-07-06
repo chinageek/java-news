@@ -1,4 +1,4 @@
-use javaranger;
+use news;
 set names utf8;
 
 create table t_demo(

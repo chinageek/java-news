@@ -54,12 +54,17 @@ public class UserController {
 		}	
 	}
 	@RequestMapping("/addpage")
-	public String addPage(){
-		return "addpage";
+	public ModelAndView addPage(){
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("addpage");
+        return mv;
 	}
+
 	@RequestMapping("/updatepage")
-	public String updatePage(){
-		return "updatepage";
+	public ModelAndView updatePage(){
+        ModelAndView mv=new ModelAndView();
+        mv.setViewName("updatepage");
+        return mv;
 	}
 	@RequestMapping("/handleupdate")
 	public ModelAndView handleUpdate(@Valid User user,BindingResult result){
