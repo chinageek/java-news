@@ -1,56 +1,0 @@
-10
-
-dir
-4
-https://javanews.googlecode.com/svn/trunk/java-news/src/main/java/com/javaranger/news
-https://javanews.googlecode.com/svn
-
-
-
-2013-03-30T14:53:51.631310Z
-4
-wangtao0501
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-f6c188d2-d319-c88c-c5c6-b78b9b8f00d2
-
-
-
-
-
-
-0
-
-controller
-dir
-
-dao
-dir
-
-daoimpl
-dir
-
-entity
-dir
-
-pojo
-dir
-
-service
-dir
-
-utils
-dir
-
