@@ -15,13 +15,13 @@
             <a class="brand">Hello,SinaAppEngine is welcome you!</a>
         </div>
     </div>
-<form class="well" action="/handleinseart" method="post">
+<form class="well" action="/user/handleinseart" method="post">
   <label>Add user</label>
   <input type="hidden" name="id" value="100000"/>
     name:<input type="text" class="span3" name="name" placeholder="Type name..."><br>
     age:<input type="text" class="span3" name="age" placeholder="Type age..."><br>
-      sex:man<input type="radio" name="sex" value="man">
-  woman<input type="radio" name="sex" value="woman"><br>
+    sex:man<input type="radio" name="sex" value="man">
+    woman<input type="radio" name="sex" value="woman"><br>
   <button type="submit" class="btn">add</button>
 </form>
 </div>

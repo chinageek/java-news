@@ -9,11 +9,11 @@
 	</insert>
 
 	<delete id="deleteById" parameterType="long">
-		delete from t_demo where id=#{id}
+		delete from user where id=#{id}
 	</delete>
 
 	<update id="updateUser" parameterType="User">
-		update t_demo set
+		update user set
 		name=#{name},
 		age=#{age},
 		sex=#{sex}
@@ -21,13 +21,13 @@
 	</update>
 
 	<select id="findById" parameterType="long" resultMap="UserMap">
-		select * from t_demo where id=#{id}
+		select * from user where id=#{id}
 	</select>
 	<select id="findByName" parameterType="String" resultMap="UserMap">
-		select * from t_demo where name=#{name}
+		select * from user where name=#{name}
 	</select>
 	<select id="findByLimit" parameterType="int" resultMap="UserMap">
-		select * from t_demo limit 0,#{off}
+		select * from user limit 0,#{off}
 	</select>
 
 	<resultMap type="User" id="UserMap">

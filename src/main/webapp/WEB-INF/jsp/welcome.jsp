@@ -22,13 +22,13 @@
         </div>
     </div>
 	    <span>
-		    <form class="well" action="/search" method="post">
+		    <form class="well" action="/user/search" method="post">
 			  <input type="text" class="span3" name="name"  placeholder="Type name ...">
 			  <button type="submit" class="btn">search</button>
 			</form>
 			</span>
 			<span>
-				<button class="btn" onclick="window.location.href='/addpage'">add a user</button>
+				<button class="btn" onclick="window.location.href='/user/addpage'">add a user</button>
 			</span>
 <br>
 <div align="center">

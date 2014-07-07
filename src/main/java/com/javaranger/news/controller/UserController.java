@@ -19,12 +19,13 @@ import org.springframework.web.servlet.view.RedirectView;
 import com.javaranger.news.pojo.User;
 import com.javaranger.news.service.UserService;
 
-@Controller()
+@Controller
+@RequestMapping("user")
 public class UserController {
 	@Resource(name="userService")
 	private UserService service;
 
-	@RequestMapping("/")
+	@RequestMapping("/welcome")
 	public ModelAndView welcome(){
 		ModelAndView mv=new ModelAndView();
 		List<User> list=service.findByLimit(30);
@@ -49,7 +50,7 @@ public class UserController {
 			return mv;
 		}else{
 			service.insertUser(user);
-			mv.setView(new RedirectView("/"));
+			mv.setView(new RedirectView("/user/welcome"));
 			return mv;
 		}	
 	}

@@ -5,7 +5,7 @@
 function deleteUser(obj){
 	var p=$(obj).parents("tr");
 	var id=p.find("td[name='id']").text();
-	window.location="/handledelete?id="+id;
+	window.location="/user/handledelete?id="+id;
 }
 /*
  * 这是处理update点击事件的函数
@@ -17,7 +17,7 @@ function updateUser(obj){
 	var name=p.find("td[name='name']").text();
 	var sex=p.find("td[name='sex']").text();
 	var age=p.find("td[name='age']").text();
-	document.write("<form action='/updatepage' method='post' name='formx1' style='display:none'>");
+	document.write("<form action='/user/updatepage' method='post' name='formx1' style='display:none'>");
 	document.write("<input type=hidden name='id' value='"+id+"'>");
 	document.write("<input type=hidden name='name' value='"+name+"'>");
 	document.write("<input type=hidden name='sex' value='"+sex+"'>");
